@@ -7,7 +7,7 @@ proc paramUrl(s: string): string =
         paramurl &= "$#=$#&".format(encodeUrl(key), encodeUrl(getStr(value)))
     var paramurl2 = paramurl[0..len(paramurl) - 2]
     return paramurl2
-var defUserAgent = "Nim Requests v0.1.0"
+var defUserAgent = "nim-tweepy"
 proc getWithParams*(url: string, params: string, extraHeaders = "", maxRedirects = 5,timeout = -1, userAgent = defUserAgent,proxy: Proxy = nil): Response =  
     var realurl = url & paramUrl(params)
     echo(realurl)
